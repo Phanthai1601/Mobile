@@ -99,7 +99,9 @@ public class MainActivity extends AppCompatActivity {
         image4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Sms();
+
+                Intent information = new Intent(MainActivity.this, RecruitMain.class);
+                startActivity(information);
             }
         });
         imageBell.setOnClickListener(new View.OnClickListener() {

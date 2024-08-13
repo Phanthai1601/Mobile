@@ -7,7 +7,7 @@ import android.util.Log;
 public class DbHelper extends SQLiteOpenHelper {
     static final String dbName = "DemoSQLLite.DB";
 
-    static final int dbVersion = 40;
+    static final int dbVersion = 100;
 
     public DbHelper(Context context) {
         super(context, dbName, null, dbVersion);
@@ -72,7 +72,18 @@ public class DbHelper extends SQLiteOpenHelper {
         catch (Exception e){
             Log.e("Error","There are some problems!");
         }
-
+        try{
+            String createTableRECRUITS = "create table RECRUITS("+
+                    "Recruitid INTEGER PRIMARY KEY," +
+                    "Id INTEGER NOT NULL,"+
+                    "Title TEXT NOT NULL,"+
+                    "Content TEXT NOT NULL,"+
+                    "FOREIGN KEY(Id) REFERENCES PERSONS(Id))";
+            db.execSQL(createTableRECRUITS);
+        }
+        catch (Exception e){
+            Log.e("Error","There are some problems!");
+        }
         try{
             String LOGINS = "CREATE TABLE LOGINS" +
                         "(IDTK INTEGER PRIMARY KEY AUTOINCREMENT,"+
@@ -95,6 +106,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS RELAXS");
         db.execSQL("DROP TABLE IF EXISTS SALARYS");
         db.execSQL("DROP TABLE IF EXISTS LOGINS");
+        db.execSQL("DROP TABLE IF EXISTS RECRUITS");
         onCreate(db);
     }
 
