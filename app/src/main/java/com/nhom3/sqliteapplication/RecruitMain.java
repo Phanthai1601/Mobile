@@ -46,18 +46,14 @@ public class RecruitMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_recruit_main);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         //vd4 set back button
         ActionBar actionBar = getSupportActionBar();
-       /* String tab = "";
-        for (int i = 0; i < 4; i++) {
-            tab += "\t";
-        }*/
-        actionBar.setTitle(/*tab+*/"Quản Lý Chính Sách Tuyển Dụng");
+
+        actionBar.setTitle("Quản Lý Chính Sách Tuyển Dụng");
         actionBar.setDisplayHomeAsUpEnabled(true);
         rcv = findViewById(R.id.rcvPerson);
         btnAddPerson = findViewById(R.id.btnAddPerson);

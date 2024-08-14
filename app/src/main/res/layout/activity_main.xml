@@ -227,14 +227,22 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="69dp"
                                 android:layout_gravity="center"
-                                app:srcCompat="@drawable/application" />
+                                app:srcCompat="@drawable/recruitment_manager" />
 
                             <TextView
                                 android:id="@+id/textView541"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="Chức Năng Khác"
+                                android:text="Quản lý chính sách"
+                                android:textAlignment="center"
+                                android:textColor="#8d8d8d"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/textViewTDD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="tuyển dụng"
                                 android:textAlignment="center"
                                 android:textColor="#8d8d8d"
                                 android:textStyle="bold" />
