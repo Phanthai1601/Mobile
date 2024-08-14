@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView back,image1,image2,image3,image4,imageBell;
+    ImageView back,image1,image2,image3,image4,imageBell,image5;
     ConstraintLayout logo,logo1;
     TextView txtUsername;
     String tenThongTinDangNhap="login";
@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
         image2 = findViewById(R.id.image2);
         image3 = findViewById(R.id.image3);
         image4 = findViewById(R.id.image4);
+        image5 = findViewById(R.id.image5);
+
         txtUsername = findViewById(R.id.txtUsername);
-        logo  = findViewById(R.id.logo);
+        //logo  = findViewById(R.id.logo);
         logo1  = findViewById(R.id.logo1);
         imageBell = findViewById(R.id.imageBell);
     }
@@ -104,19 +106,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(information);
             }
         });
+        image5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent information = new Intent(MainActivity.this, ExpenseMain.class);
+                startActivity(information);
+            }
+        });
         imageBell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Sms();
             }
         });
-        logo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentImplicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bit.ly/46lQ8G9"));
-                startActivity(intentImplicit);
-            }
-        });
+//        logo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intentImplicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bit.ly/46lQ8G9"));
+//                startActivity(intentImplicit);
+//            }
+//        });
         logo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
