@@ -63,7 +63,7 @@ public class ExpenseMain extends AppCompatActivity {
         for (int i = 0; i < 4; i++) {
             tab += "\t";
         }
-        actionBar.setTitle(tab+"Quản Lý Nhân Sự");
+        actionBar.setTitle(tab+"Quản Lý chi phí");
         actionBar.setDisplayHomeAsUpEnabled(true);
         rcv = findViewById(R.id.rcvPerson);
         btnAddPerson = findViewById(R.id.btnAddPerson);
