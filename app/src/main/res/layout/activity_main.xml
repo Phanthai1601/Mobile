@@ -17,14 +17,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="568dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="310dp"
+                    android:layout_height="340dp"
                     android:scaleType="centerCrop"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -37,11 +37,11 @@
                     android:id="@+id/imageback"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="24dp"
                     android:layout_marginStart="22dp"
+                    android:layout_marginTop="24dp"
                     android:background="@drawable/back"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <ImageView
@@ -52,14 +52,14 @@
                     android:layout_marginEnd="22dp"
                     android:background="@drawable/bell"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <ImageView
                     android:id="@+id/imageUser"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
@@ -70,17 +70,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
+                    android:layout_marginTop="340dp"
                     android:layout_marginEnd="12dp"
-                    android:layout_marginTop="310dp"
                     android:background="@drawable/banner1_top_background"
                     android:elevation="3dp"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.497">
 
                     <LinearLayout
@@ -103,7 +103,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="10"
-                            android:text="Diep"
+                            android:text="NHOM11"
                             android:textAlignment="viewEnd"
                             android:textAllCaps="true"
                             android:textColor="#000000"
@@ -146,12 +146,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginTop="8dp"
+                                android:lineSpacingExtra="8dp"
                                 android:maxLines="2"
                                 android:text="Lưu trữ thông tin"
                                 android:textAlignment="center"
                                 android:textColor="#8d8d8d"
-                                android:textStyle="bold"
-                                android:lineSpacingExtra="8dp" />
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -227,10 +227,71 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="69dp"
                                 android:layout_gravity="center"
-                                app:srcCompat="@drawable/application" />
+                                app:srcCompat="@drawable/outsourcing" />
 
                             <TextView
                                 android:id="@+id/textView541"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Tuyển dụng "
+                                android:textAlignment="center"
+                                android:textColor="#8d8d8d"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/image5"
+                                android:layout_width="match_parent"
+                                android:layout_height="69dp"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/clipboard" />
+
+                            <TextView
+                                android:id="@+id/textView5313"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Quản Lý Chi phí"
+                                android:textAlignment="center"
+                                android:textColor="#8d8d8d"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/image41"
+                                android:layout_width="match_parent"
+                                android:layout_height="69dp"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/application" />
+
+                            <TextView
+                                android:id="@+id/textView5411"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
@@ -241,79 +302,19 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_height="150dp"
-                android:id="@+id/logo"
-                android:background="@drawable/bottom1_banner_background">
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/banner_circle" />
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.588"
-                    app:srcCompat="@drawable/circle_2" />
-
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="69dp"
-                    android:layout_height="69dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView7"
-                    app:layout_constraintStart_toStartOf="@+id/imageView7"
-                    app:layout_constraintTop_toTopOf="@+id/imageView7"
-                    app:srcCompat="@drawable/logo" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kỷ Niệm"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView6"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
-                    app:layout_constraintTop_toTopOf="@+id/imageView7" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="125 năm thành lập trường"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#ffffff"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_height="150dp"
                 android:id="@+id/logo1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
                 android:background="@drawable/bottom1_banner_background">
 
                 <ImageView
@@ -349,11 +350,11 @@
                     android:id="@+id/textView61"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="Khoa CNTT"
+                    android:textColor="#ffffff"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="#ffffff"
-                    android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="@+id/imageView61"
                     app:layout_constraintStart_toEndOf="@+id/imageView71"
                     app:layout_constraintTop_toTopOf="@+id/imageView71" />
@@ -362,8 +363,8 @@
                     android:id="@+id/textView81"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sự kiện IT Festival"
                     android:layout_marginTop="8dp"
+                    android:text="Sự kiện IT Festival"
                     android:textColor="#ffffff"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView71"
