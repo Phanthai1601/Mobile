@@ -227,14 +227,14 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="69dp"
                                 android:layout_gravity="center"
-                                app:srcCompat="@drawable/application" />
+                                app:srcCompat="@drawable/outsourcing" />
 
                             <TextView
                                 android:id="@+id/textView541"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="Chức Năng Khác"
+                                android:text="Tuyển dụng "
                                 android:textAlignment="center"
                                 android:textColor="#8d8d8d"
                                 android:textStyle="bold" />
