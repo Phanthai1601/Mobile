@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView back,image1,image2,image3,image4,imageBell,image5;
+    ImageView back,image1,image2,image3,image4,imageBell,image5,image41;
     ConstraintLayout logo,logo1;
     TextView txtUsername;
     String tenThongTinDangNhap="login";
@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         image3 = findViewById(R.id.image3);
         image4 = findViewById(R.id.image4);
         image5 = findViewById(R.id.image5);
+        image41 = findViewById(R.id.image41);
+
 
         txtUsername = findViewById(R.id.txtUsername);
         //logo  = findViewById(R.id.logo);
@@ -77,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent information = new Intent(MainActivity.this, PersonMain.class);
                 startActivity(information);
+
+            }
+        });
+        image41.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sms();
 
             }
         });
