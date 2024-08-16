@@ -10,8 +10,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String databaseName = "SignLog.db";
     public DatabaseHelper(@Nullable Context context) {
         super(context, "SignLog.db", null, 1);
-        String[] emails = {"1","vuxuandiep", "dangquangduc","nguyenthedoan","nguyenvandat"};
-        String[] passwords = {"123", "123","123","123"};
+        String[] emails = {"xuantung","manhhong", "duongvu","duong","tuanvu"};
+        String[] passwords = {"123", "123","123","123", "123"};
 
         for (int i = 0; i < emails.length; i++) {
             insertData(emails[i], passwords[0]);

@@ -98,11 +98,11 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.PersonVi
                 EditText ed_content = dialog.findViewById(R.id.edContent);
                 EditText ed_day = dialog.findViewById(R.id.edBirthday);
                 TextView txt = dialog.findViewById(R.id.txtTitel);
-                txt.setText("SỬA KHÁCH HÀNG");
-                ed_name.setText(NHANVIEN.getName());
-                ed_money.setText(NHANVIEN.getMoney());
-                ed_content.setText(NHANVIEN.getContent());
-                ed_day.setText(NHANVIEN.getDay()+"");
+                txt.setText("SỬA CHI PHÍ");
+                ed_name.setText(NHANVIEN.getName() + "");
+                ed_money.setText(NHANVIEN.getMoney() + "");
+                ed_content.setText(NHANVIEN.getContent() + "");
+                ed_day.setText(NHANVIEN.getDay() + "");
                 ImageView img = dialog.findViewById(R.id.imgdate);
                 img.setOnClickListener(new View.OnClickListener() {
                     @Override
