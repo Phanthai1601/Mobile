@@ -27,7 +27,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nhom3.sqliteapplication.adapter.PersonAdapter;
 import com.nhom3.sqliteapplication.dao.PersonDAO;
-import com.nhom3.sqliteapplication.dto.PersonDTO;
+import com.nhom3.sqliteapplication.model.Person;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -44,7 +44,7 @@ public class PersonMain extends AppCompatActivity {
 
     private PersonDAO dao ;
     private PersonAdapter adapter;
-    private ArrayList<PersonDTO> list ;
+    private ArrayList<Person> list ;
 
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     private SearchView searchView;
@@ -149,7 +149,7 @@ public class PersonMain extends AppCompatActivity {
                             ed_phone.setError("Không đúng định dạng điện thoại");
                         }
                         else {
-                            PersonDTO NHANVIEN = new PersonDTO();
+                            Person NHANVIEN = new Person();
                             NHANVIEN.setName(ed_name.getText().toString());
                             NHANVIEN.setPhone(ed_phone.getText().toString());
                             NHANVIEN.setAddress(ed_address.getText().toString());
@@ -181,9 +181,9 @@ public class PersonMain extends AppCompatActivity {
         });
     }
     private void FinterList(String text) {
-        ArrayList<PersonDTO> filteredList=new ArrayList<>();
+        ArrayList<Person> filteredList=new ArrayList<>();
  //     list=dao.getAll();
-        for (PersonDTO NHANVIEN : list){
+        for (Person NHANVIEN : list){
             if (NHANVIEN.getName().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(NHANVIEN);
             }

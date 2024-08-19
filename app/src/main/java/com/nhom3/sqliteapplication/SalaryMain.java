@@ -28,7 +28,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nhom3.sqliteapplication.database.DbHelper;
 import com.nhom3.sqliteapplication.adapter.SalaryAdapter;
 import com.nhom3.sqliteapplication.dao.SalaryDAO;
-import com.nhom3.sqliteapplication.dto.SalaryDTO;
+import com.nhom3.sqliteapplication.model.Salary;
 
 
 import java.text.ParseException;
@@ -46,7 +46,7 @@ public class SalaryMain extends AppCompatActivity {
     private SalaryDAO dao ;
     private DbHelper  dbHelper;
     private SalaryAdapter adapter;
-    private ArrayList<SalaryDTO> list ;
+    private ArrayList<Salary> list ;
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     private SearchView searchView;
     @Override
@@ -144,7 +144,7 @@ public class SalaryMain extends AppCompatActivity {
                         }else if(!(isValidFormat("dd/MM/yyyy",ed_datein.getText().toString()))){
                             ed_datein.setError("Không đúng định dạng ngày");
                         } else {
-                            SalaryDTO person = new SalaryDTO();
+                            Salary person = new Salary();
 
                             person.setId(Integer.parseInt(ed_id.getText().toString()));
                             person.setSalaryid(Integer.parseInt(ed_id.getText().toString()));
@@ -178,10 +178,10 @@ public class SalaryMain extends AppCompatActivity {
     }
 
     private void FinterList(String text) {
-        ArrayList<SalaryDTO> filteredList=new ArrayList<>();
+        ArrayList<Salary> filteredList=new ArrayList<>();
 //        list=dao.getAll();
 
-        for (SalaryDTO person: list){
+        for (Salary person: list){
             if (String.valueOf(person.getSalaryid()).toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(person);
             }

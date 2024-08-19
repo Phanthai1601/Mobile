@@ -27,7 +27,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nhom3.sqliteapplication.adapter.RelaxAdapter;
 import com.nhom3.sqliteapplication.dao.RelaxDAO;
-import com.nhom3.sqliteapplication.dto.RelaxDTO;
+import com.nhom3.sqliteapplication.model.Relax;
 
 
 import java.text.ParseException;
@@ -43,7 +43,7 @@ public class RelaxMain extends AppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     private RelaxDAO dao ;
     private RelaxAdapter adapter;
-    private ArrayList<RelaxDTO> list ;
+    private ArrayList<Relax> list ;
 
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     private SearchView searchView;
@@ -138,7 +138,7 @@ public class RelaxMain extends AppCompatActivity {
                             ed_date.setError("Không đúng định dạng ngày");
                         }
                         else {
-                            RelaxDTO person = new RelaxDTO();
+                            Relax person = new Relax();
 
                             person.setRelaxid(Integer.parseInt(ed_id.getText().toString()));
                             person.setId(Integer.parseInt(ed_id.getText().toString()));
@@ -171,10 +171,10 @@ public class RelaxMain extends AppCompatActivity {
     }
 
     private void FinterList(String text) {
-        ArrayList<RelaxDTO> filteredList=new ArrayList<>();
+        ArrayList<Relax> filteredList=new ArrayList<>();
 //        list=dao.getAll();
 
-        for (RelaxDTO person: list){
+        for (Relax person: list){
             if (String.valueOf(person.getRelaxid()).toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(person);
             }

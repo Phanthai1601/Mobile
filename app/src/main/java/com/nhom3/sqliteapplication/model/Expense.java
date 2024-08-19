@@ -1,16 +1,16 @@
-package com.nhom3.sqliteapplication.dto;
+package com.nhom3.sqliteapplication.model;
 
-public class ExpenseDTO {
+public class Expense {
     private int id;
     private String name ;
     private String content;
     private Integer money;
     private String day ;
 
-    public ExpenseDTO() {
+    public Expense() {
     }
 
-    public ExpenseDTO(int id, String name, String content, String day, Integer money) {
+    public Expense(int id, String name, String content, String day, Integer money) {
         this.id = id;
         this.name = name;
         this.content = content;

@@ -1,13 +1,13 @@
-package com.nhom3.sqliteapplication.dto;
+package com.nhom3.sqliteapplication.model;
 
-public class LoginDTO {
+public class Login {
    private int id;
    private String Username,password,Fullname;
 
-    public LoginDTO() {
+    public Login() {
     }
 
-    public LoginDTO(int id, String username, String password, String fullname) {
+    public Login(int id, String username, String password, String fullname) {
         this.id = id;
         Username = username;
         this.password = password;

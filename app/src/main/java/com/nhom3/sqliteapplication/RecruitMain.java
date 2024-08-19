@@ -26,12 +26,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nhom3.sqliteapplication.adapter.RecruitAdapter;
 import com.nhom3.sqliteapplication.dao.RecruitDAO;
-import com.nhom3.sqliteapplication.dto.RecruitDTO;
+import com.nhom3.sqliteapplication.model.Recruit;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class RecruitMain extends AppCompatActivity {
     private RecyclerView rcv;
@@ -39,7 +36,7 @@ public class RecruitMain extends AppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     private RecruitDAO dao;
     private RecruitAdapter adapter;
-    private ArrayList<RecruitDTO> list;
+    private ArrayList<Recruit> list;
     private SearchView searchView;
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
@@ -116,7 +113,7 @@ public class RecruitMain extends AppCompatActivity {
                             ed_content.setError("không được để trống");
                         }
                         else {
-                            RecruitDTO person = new RecruitDTO();
+                            Recruit person = new Recruit();
 
                             person.setRecruitid(Integer.parseInt(ed_id.getText().toString()));
                             person.setTitle(ed_title.getText().toString());
@@ -146,10 +143,10 @@ public class RecruitMain extends AppCompatActivity {
         });
     }
     private void FinterList(String text) {
-        ArrayList<RecruitDTO> filteredList=new ArrayList<>();
+        ArrayList<Recruit> filteredList=new ArrayList<>();
 //        list=dao.getAll();
 
-        for (RecruitDTO person: list){
+        for (Recruit person: list){
             if (String.valueOf(person.getRecruitid()).toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(person);
             }

@@ -1,7 +1,6 @@
 package com.nhom3.sqliteapplication.adapter;
 
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,7 +13,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,29 +21,25 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nhom3.sqliteapplication.dao.PersonDAO;
 import com.nhom3.sqliteapplication.dao.RecruitDAO;
-import com.nhom3.sqliteapplication.dto.PersonDTO;
 import com.nhom3.sqliteapplication.R;
-import com.nhom3.sqliteapplication.dto.RecruitDTO;
+import com.nhom3.sqliteapplication.model.Recruit;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class RecruitAdapter extends RecyclerView.Adapter<RecruitAdapter.PersonViewHolder> {
 
     private Context context;
-    private ArrayList<RecruitDTO> list;
+    private ArrayList<Recruit> list;
 
-    public RecruitAdapter(Context context, ArrayList<RecruitDTO> list){
+    public RecruitAdapter(Context context, ArrayList<Recruit> list){
         this.context= context;
         this.list = list;
     }
-    public void setFilteredList(ArrayList<RecruitDTO> filteredList){
+    public void setFilteredList(ArrayList<Recruit> filteredList){
         this.list=filteredList;
         notifyDataSetChanged();
     }
@@ -63,7 +57,7 @@ public class RecruitAdapter extends RecyclerView.Adapter<RecruitAdapter.PersonVi
 
     @Override
     public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
-        RecruitDTO NHANVIEN = list.get(position);
+        Recruit NHANVIEN = list.get(position);
 
         holder.txtReID.setText("ID:"+list.get(position).getRecruitid());
         holder.txtReMaTD.setText("Mã chính sách:"+list.get(position).getRecruitid());

@@ -24,7 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom3.sqliteapplication.dao.PersonDAO;
-import com.nhom3.sqliteapplication.dto.PersonDTO;
+import com.nhom3.sqliteapplication.model.Person;
 import com.nhom3.sqliteapplication.R;
 
 import java.text.ParseException;
@@ -37,13 +37,13 @@ import java.util.GregorianCalendar;
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonViewHolder> {
 
     private Context context;
-    private ArrayList<PersonDTO> list;
+    private ArrayList<Person> list;
 
-    public PersonAdapter(Context context, ArrayList<PersonDTO> list){
+    public PersonAdapter(Context context, ArrayList<Person> list){
         this.context= context;
         this.list = list;
     }
-    public void setFilteredList(ArrayList<PersonDTO> filteredList){
+    public void setFilteredList(ArrayList<Person> filteredList){
         this.list=filteredList;
         notifyDataSetChanged();
     }
@@ -61,7 +61,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
 
     @Override
     public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
-        PersonDTO NHANVIEN = list.get(position);
+        Person NHANVIEN = list.get(position);
 
         holder.txtID.setText("ID:"+list.get(position).getId());
         holder.txtName.setText("Tên:"+list.get(position).getName());

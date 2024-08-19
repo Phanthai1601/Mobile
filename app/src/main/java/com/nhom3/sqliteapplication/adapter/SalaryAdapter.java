@@ -24,7 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom3.sqliteapplication.dao.SalaryDAO;
-import com.nhom3.sqliteapplication.dto.SalaryDTO;
+import com.nhom3.sqliteapplication.model.Salary;
 import com.nhom3.sqliteapplication.R;
 
 import java.text.ParseException;
@@ -37,13 +37,13 @@ import java.util.GregorianCalendar;
 public class SalaryAdapter extends RecyclerView.Adapter<SalaryAdapter.PersonViewHolder> {
 
     private Context context;
-    private ArrayList<SalaryDTO> list;
+    private ArrayList<Salary> list;
 
-    public SalaryAdapter(Context context, ArrayList<SalaryDTO> list){
+    public SalaryAdapter(Context context, ArrayList<Salary> list){
         this.context= context;
         this.list = list;
     }
-    public void setFilteredList(ArrayList<SalaryDTO> filteredList){
+    public void setFilteredList(ArrayList<Salary> filteredList){
         this.list=filteredList;
         notifyDataSetChanged();
     }
@@ -61,7 +61,7 @@ public class SalaryAdapter extends RecyclerView.Adapter<SalaryAdapter.PersonView
 
     @Override
     public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
-        SalaryDTO person = list.get(position);
+        Salary person = list.get(position);
 
         holder.txtWalletid.setText("ID :"+list.get(position).getSalaryid());
         holder.txtId.setText("Mã Lương :"+list.get(position).getId());

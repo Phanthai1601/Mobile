@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nhom3.sqliteapplication.dto.RecruitDTO;
+import com.nhom3.sqliteapplication.model.Recruit;
 import com.nhom3.sqliteapplication.database.DbHelper;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class RecruitDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-    public long insert(RecruitDTO person){
+    public long insert(Recruit person){
         ContentValues contentValues = new ContentValues();
         contentValues.put("RecruitID",person.getRecruitid());
         contentValues.put("Id",person.getId());
@@ -30,7 +30,7 @@ public class RecruitDAO {
         return res ;
     }
 
-    public long update(RecruitDTO person){
+    public long update(Recruit person){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Title",person.getTitle());
         contentValues.put("Content",person.getContent());
@@ -46,25 +46,25 @@ public class RecruitDAO {
         return 1 ;
     }
 
-    public ArrayList<RecruitDTO> getAll(){
+    public ArrayList<Recruit> getAll(){
         String sql="SELECT * FROM RECRUITS";
-        return (ArrayList<RecruitDTO>) getData(sql);
+        return (ArrayList<Recruit>) getData(sql);
     }
 
-    public RecruitDTO getRecruitid(String recruit){
+    public Recruit getRecruitid(String recruit){
         String sql = "SELECT * FROM RECRUITS WHERE Recruitid=?";
-        List<RecruitDTO> list = getData(sql,recruit);
+        List<Recruit> list = getData(sql,recruit);
         return list.get(0);
     }
 
 
     @SuppressLint("Range")
-    private List<RecruitDTO> getData(String sql, String...selectionArgs) {
+    private List<Recruit> getData(String sql, String...selectionArgs) {
 
-        List<RecruitDTO> list = new ArrayList<>();
+        List<Recruit> list = new ArrayList<>();
         Cursor c = db.rawQuery(sql,selectionArgs);
         while (c.moveToNext()){
-            RecruitDTO obj = new RecruitDTO();
+            Recruit obj = new Recruit();
             obj.setRecruitid(Integer.parseInt(c.getString(c.getColumnIndex("Recruitid"))));
             obj.setId(Integer.parseInt(c.getString(c.getColumnIndex("Id"))));
             obj.setTitle(c.getString(c.getColumnIndex("Title")));

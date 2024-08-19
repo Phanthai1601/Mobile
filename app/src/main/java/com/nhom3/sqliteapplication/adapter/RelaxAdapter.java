@@ -24,7 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom3.sqliteapplication.dao.RelaxDAO;
-import com.nhom3.sqliteapplication.dto.RelaxDTO;
+import com.nhom3.sqliteapplication.model.Relax;
 import com.nhom3.sqliteapplication.R;
 
 import java.text.ParseException;
@@ -37,13 +37,13 @@ import java.util.GregorianCalendar;
 public class RelaxAdapter extends RecyclerView.Adapter<RelaxAdapter.PersonViewHolder> {
 
     private Context context;
-    private ArrayList<RelaxDTO> list;
+    private ArrayList<Relax> list;
 
-    public RelaxAdapter(Context context, ArrayList<RelaxDTO> list){
+    public RelaxAdapter(Context context, ArrayList<Relax> list){
         this.context= context;
         this.list = list;
     }
-    public void setFilteredList(ArrayList<RelaxDTO> filteredList){
+    public void setFilteredList(ArrayList<Relax> filteredList){
         this.list=filteredList;
         notifyDataSetChanged();
     }
@@ -61,7 +61,7 @@ public class RelaxAdapter extends RecyclerView.Adapter<RelaxAdapter.PersonViewHo
 
     @Override
     public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
-        RelaxDTO person = list.get(position);
+        Relax person = list.get(position);
         holder.txtRelaxid.setText("Mã nghỉ phép:"+list.get(position).getRelaxid());
         holder.txtId.setText("ID :"+list.get(position).getId());
         holder.txtReason.setText("Lý do:"+list.get(position).getReason());

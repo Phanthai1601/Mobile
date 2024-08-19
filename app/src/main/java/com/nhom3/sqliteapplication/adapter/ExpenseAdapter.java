@@ -24,9 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom3.sqliteapplication.dao.ExpenseDAO;
-import com.nhom3.sqliteapplication.dao.PersonDAO;
-import com.nhom3.sqliteapplication.dto.ExpenseDTO;
-import com.nhom3.sqliteapplication.dto.PersonDTO;
+import com.nhom3.sqliteapplication.model.Expense;
 import com.nhom3.sqliteapplication.R;
 
 import java.text.ParseException;
@@ -39,13 +37,13 @@ import java.util.GregorianCalendar;
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.PersonViewHolder> {
 
     private Context context;
-    private ArrayList<ExpenseDTO> list;
+    private ArrayList<Expense> list;
 
-    public ExpenseAdapter(Context context, ArrayList<ExpenseDTO> list){
+    public ExpenseAdapter(Context context, ArrayList<Expense> list){
         this.context= context;
         this.list = list;
     }
-    public void setFilteredList(ArrayList<ExpenseDTO> filteredList){
+    public void setFilteredList(ArrayList<Expense> filteredList){
         this.list=filteredList;
         notifyDataSetChanged();
     }
@@ -63,7 +61,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.PersonVi
 
     @Override
     public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
-        ExpenseDTO NHANVIEN = list.get(position);
+        Expense NHANVIEN = list.get(position);
 
         holder.txtID.setText("ID:"+list.get(position).getId());
         holder.txtName.setText("Tên:"+list.get(position).getName());

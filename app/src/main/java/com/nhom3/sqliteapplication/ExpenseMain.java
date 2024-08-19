@@ -26,11 +26,8 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nhom3.sqliteapplication.adapter.ExpenseAdapter;
-import com.nhom3.sqliteapplication.adapter.PersonAdapter;
 import com.nhom3.sqliteapplication.dao.ExpenseDAO;
-import com.nhom3.sqliteapplication.dao.PersonDAO;
-import com.nhom3.sqliteapplication.dto.ExpenseDTO;
-import com.nhom3.sqliteapplication.dto.PersonDTO;
+import com.nhom3.sqliteapplication.model.Expense;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,7 +44,7 @@ public class ExpenseMain extends AppCompatActivity {
 
     private ExpenseDAO dao ;
     private ExpenseAdapter adapter;
-    private ArrayList<ExpenseDTO> list ;
+    private ArrayList<Expense> list ;
 
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     private SearchView searchView;
@@ -141,7 +138,7 @@ public class ExpenseMain extends AppCompatActivity {
                             ed_day.setError("Không đúng định dạng ngày");
                         }
                         else {
-                            ExpenseDTO NHANVIEN = new ExpenseDTO();
+                            Expense NHANVIEN = new Expense();
                             NHANVIEN.setName(ed_name.getText().toString());
                             NHANVIEN.setMoney(Integer.parseInt(ed_money.getText().toString()));
                             NHANVIEN.setContent(ed_content.getText().toString());
@@ -170,9 +167,9 @@ public class ExpenseMain extends AppCompatActivity {
         });
     }
     private void FinterList(String text) {
-        ArrayList<ExpenseDTO> filteredList=new ArrayList<>();
+        ArrayList<Expense> filteredList=new ArrayList<>();
         //list=dao.getAll();
-        for (ExpenseDTO NHANVIEN : list){
+        for (Expense NHANVIEN : list){
             if (NHANVIEN.getName().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(NHANVIEN);
             }

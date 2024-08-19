@@ -1,16 +1,16 @@
-package com.nhom3.sqliteapplication.dto;
+package com.nhom3.sqliteapplication.model;
 
-public class RelaxDTO {
+public class Relax {
     private  int relaxid;
     private int id;
     private  String date;
     private   String day;
     private   String reason;
-    public RelaxDTO() {
+    public Relax() {
 
     }
 
-    public RelaxDTO(int relaxid, int id, String date, String day, String reason) {
+    public Relax(int relaxid, int id, String date, String day, String reason) {
         this.relaxid = relaxid;
         this.id = id;
         this.date = date;

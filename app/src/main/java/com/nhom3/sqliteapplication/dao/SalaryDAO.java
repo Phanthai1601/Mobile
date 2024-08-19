@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nhom3.sqliteapplication.dto.SalaryDTO;
+import com.nhom3.sqliteapplication.model.Salary;
 import com.nhom3.sqliteapplication.database.DbHelper;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class SalaryDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-    public long insert(SalaryDTO person){
+    public long insert(Salary person){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Salaryid",person.getSalaryid());
         contentValues.put("Id",person.getId());
@@ -32,7 +32,7 @@ public class SalaryDAO {
         return res ;
     }
 
-    public long update(SalaryDTO person){
+    public long update(Salary person){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Ware",person.getWare());
         contentValues.put("Bonus",person.getBonus());
@@ -50,23 +50,23 @@ public class SalaryDAO {
         return 1 ;
     }
 
-    public ArrayList<SalaryDTO> getAll(){
+    public ArrayList<Salary> getAll(){
         String sql="SELECT * FROM SALARYS";
-        return (ArrayList<SalaryDTO>) getData(sql);
+        return (ArrayList<Salary>) getData(sql);
     }
 
-    public SalaryDTO getSalaryid(String salaryid){
+    public Salary getSalaryid(String salaryid){
         String sql = "SELECT * FROM SALARYS WHERE Salaryid=?";
-        List<SalaryDTO> list = getData(sql,salaryid);
+        List<Salary> list = getData(sql,salaryid);
         return list.get(0);
     }
     @SuppressLint("Range")
-    private List<SalaryDTO> getData(String sql, String...selectionArgs) {
+    private List<Salary> getData(String sql, String...selectionArgs) {
 
-        List<SalaryDTO> list = new ArrayList<>();
+        List<Salary> list = new ArrayList<>();
         Cursor c = db.rawQuery(sql,selectionArgs);
         while (c.moveToNext()){
-            SalaryDTO obj = new SalaryDTO();
+            Salary obj = new Salary();
             obj.setSalaryid(Integer.parseInt(c.getString(c.getColumnIndex("Salaryid"))));
             obj.setId(Integer.parseInt(c.getString(c.getColumnIndex("Id"))));
             obj.setWare(c.getString(c.getColumnIndex("Ware")));

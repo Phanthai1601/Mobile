@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nhom3.sqliteapplication.dto.PersonDTO;
+import com.nhom3.sqliteapplication.model.Person;
 import com.nhom3.sqliteapplication.database.DbHelper;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class PersonDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-    public long insert(PersonDTO NHANVIEN){
+    public long insert(Person NHANVIEN){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Name", NHANVIEN.getName());
         contentValues.put("Phone", NHANVIEN.getPhone());
@@ -33,7 +33,7 @@ public class PersonDAO {
         return res ;
     }
 
-    public long update(PersonDTO NHANVIEN){
+    public long update(Person NHANVIEN){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Name", NHANVIEN.getName());
         contentValues.put("Phone", NHANVIEN.getPhone());
@@ -54,24 +54,24 @@ public class PersonDAO {
         return 1 ;
     }
 
-    public ArrayList<PersonDTO> getAll(){
+    public ArrayList<Person> getAll(){
         String sql="SELECT * FROM PERSONS";
-        return (ArrayList<PersonDTO>) getData(sql);
+        return (ArrayList<Person>) getData(sql);
     }
 
-    public PersonDTO getID(String id){
+    public Person getID(String id){
         String sql = "SELECT * FROM PERSONS WHERE Id=?";
-        List<PersonDTO> list = getData(sql,id);
+        List<Person> list = getData(sql,id);
         return list.get(0);
     }
 
     @SuppressLint("Range")
-    private List<PersonDTO> getData(String sql, String...selectionArgs) {
+    private List<Person> getData(String sql, String...selectionArgs) {
 
-        List<PersonDTO> list = new ArrayList<>();
+        List<Person> list = new ArrayList<>();
         Cursor c = db.rawQuery(sql,selectionArgs);
         while (c.moveToNext()){
-            PersonDTO obj = new PersonDTO();
+            Person obj = new Person();
             obj.setId(Integer.parseInt(c.getString(c.getColumnIndex("Id"))));
             obj.setName(c.getString(c.getColumnIndex("Name")));
             obj.setPhone(c.getString(c.getColumnIndex("Phone")));

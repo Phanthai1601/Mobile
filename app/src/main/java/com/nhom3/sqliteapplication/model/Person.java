@@ -1,5 +1,5 @@
-package com.nhom3.sqliteapplication.dto;
-public class PersonDTO {
+package com.nhom3.sqliteapplication.model;
+public class Person {
     private int id ;
     private String name ;
     private String address;
@@ -8,10 +8,10 @@ public class PersonDTO {
     private String birthday ;
     private String email;
     private String function;
-    public PersonDTO() {
+    public Person() {
     }
 
-    public PersonDTO(int id, String name, String address, String sex, String phone, String birthday, String email, String function) {
+    public Person(int id, String name, String address, String sex, String phone, String birthday, String email, String function) {
         this.id = id;
         this.name = name;
         this.address = address;

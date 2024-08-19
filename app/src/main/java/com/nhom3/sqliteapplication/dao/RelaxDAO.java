@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nhom3.sqliteapplication.dto.RelaxDTO;
+import com.nhom3.sqliteapplication.model.Relax;
 import com.nhom3.sqliteapplication.database.DbHelper;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class RelaxDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-    public long insert(RelaxDTO person){
+    public long insert(Relax person){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Relaxid",person.getRelaxid());
         contentValues.put("Id",person.getId());
@@ -31,7 +31,7 @@ public class RelaxDAO {
         return res ;
     }
 
-    public long update(RelaxDTO person){
+    public long update(Relax person){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Reason",person.getReason());
         contentValues.put("Day",person.getDay());
@@ -48,25 +48,25 @@ public class RelaxDAO {
         return 1 ;
     }
 
-    public ArrayList<RelaxDTO> getAll(){
+    public ArrayList<Relax> getAll(){
         String sql="SELECT * FROM RELAXS";
-        return (ArrayList<RelaxDTO>) getData(sql);
+        return (ArrayList<Relax>) getData(sql);
     }
 
-    public RelaxDTO getRelaxid(String relaxid){
+    public Relax getRelaxid(String relaxid){
         String sql = "SELECT * FROM RELAXS WHERE Relaxid=?";
-        List<RelaxDTO> list = getData(sql,relaxid);
+        List<Relax> list = getData(sql,relaxid);
         return list.get(0);
     }
 
 
     @SuppressLint("Range")
-    private List<RelaxDTO> getData(String sql, String...selectionArgs) {
+    private List<Relax> getData(String sql, String...selectionArgs) {
 
-        List<RelaxDTO> list = new ArrayList<>();
+        List<Relax> list = new ArrayList<>();
         Cursor c = db.rawQuery(sql,selectionArgs);
         while (c.moveToNext()){
-            RelaxDTO obj = new RelaxDTO();
+            Relax obj = new Relax();
             obj.setRelaxid(Integer.parseInt(c.getString(c.getColumnIndex("Relaxid"))));
             obj.setId(Integer.parseInt(c.getString(c.getColumnIndex("Id"))));
             obj.setDay(c.getString(c.getColumnIndex("Day")));

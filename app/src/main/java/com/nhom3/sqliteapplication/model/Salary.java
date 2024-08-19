@@ -1,5 +1,5 @@
-package com.nhom3.sqliteapplication.dto;
-public class SalaryDTO {
+package com.nhom3.sqliteapplication.model;
+public class Salary {
     private int salaryid;
     private int id;
     private String ware;
@@ -7,10 +7,10 @@ public class SalaryDTO {
     private String deduct;
     private  String datein;
 
-    public SalaryDTO() {
+    public Salary() {
     }
 
-    public SalaryDTO(int salaryid, int id, String ware, String bonus, String deduct, String datein) {
+    public Salary(int salaryid, int id, String ware, String bonus, String deduct, String datein) {
         this.salaryid = salaryid;
         this.id = id;
         this.ware = ware;

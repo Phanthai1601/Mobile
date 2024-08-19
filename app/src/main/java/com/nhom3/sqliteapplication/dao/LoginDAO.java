@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nhom3.sqliteapplication.dto.LoginDTO;
+import com.nhom3.sqliteapplication.model.Login;
 import com.nhom3.sqliteapplication.database.DbHelper;
 
 public class LoginDAO {
@@ -20,7 +20,7 @@ public class LoginDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-    public long insert(LoginDTO item){
+    public long insert(Login item){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Id",item.getId());
         contentValues.put("Username",item.getUsername());
@@ -30,7 +30,7 @@ public class LoginDAO {
         return res;
     }
 
-    public long update(int id, LoginDTO item){
+    public long update(int id, Login item){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Id",item.getId());
         contentValues.put("Username",item.getUsername());
@@ -46,7 +46,7 @@ public class LoginDAO {
         return 1;
     }
     @SuppressLint("Range")
-    public LoginDTO Login(String username, String password){
+    public Login Login(String username, String password){
 
         // Câu truy vấn kiểm tra xem username có tồn tại không
         String query = "SELECT * FROM LOGINS WHERE Username = ? AND Password = ?";
@@ -65,7 +65,7 @@ public class LoginDAO {
             String Username = cursor.getString(cursor.getColumnIndex("Username"));
             String Password = cursor.getString(cursor.getColumnIndex("Password"));
             String Fullname = cursor.getString(cursor.getColumnIndex("Fullname"));
-            LoginDTO user = new LoginDTO(Id,Username,Password,Fullname);
+            Login user = new Login(Id,Username,Password,Fullname);
             cursor.close();
             return user;
         }

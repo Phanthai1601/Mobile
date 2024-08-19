@@ -6,8 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nhom3.sqliteapplication.dto.ExpenseDTO;
-import com.nhom3.sqliteapplication.dto.PersonDTO;
+import com.nhom3.sqliteapplication.model.Expense;
 import com.nhom3.sqliteapplication.database.DbHelper;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class ExpenseDAO {
         db = dbHelper.getWritableDatabase();
     }
 
-    public long insert(ExpenseDTO NHANVIEN){
+    public long insert(Expense NHANVIEN){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Name", NHANVIEN.getName());
         contentValues.put("Money", NHANVIEN.getMoney());
@@ -31,7 +30,7 @@ public class ExpenseDAO {
         return res ;
     }
 
-    public long update(ExpenseDTO NHANVIEN){
+    public long update(Expense NHANVIEN){
         ContentValues contentValues = new ContentValues();
         contentValues.put("Name", NHANVIEN.getName());
         contentValues.put("Money", NHANVIEN.getMoney());
@@ -49,24 +48,24 @@ public class ExpenseDAO {
         return 1 ;
     }
 
-    public ArrayList<ExpenseDTO> getAll(){
+    public ArrayList<Expense> getAll(){
         String sql="SELECT * FROM EXPENSE";
-        return (ArrayList<ExpenseDTO>) getData(sql);
+        return (ArrayList<Expense>) getData(sql);
     }
 
-    public ExpenseDTO getID(String id){
+    public Expense getID(String id){
         String sql = "SELECT * FROM EXPENSE WHERE Id=?";
-        List<ExpenseDTO> list = getData(sql,id);
+        List<Expense> list = getData(sql,id);
         return list.get(0);
     }
 
     @SuppressLint("Range")
-    private List<ExpenseDTO> getData(String sql, String...selectionArgs) {
+    private List<Expense> getData(String sql, String...selectionArgs) {
 
-        List<ExpenseDTO> list = new ArrayList<>();
+        List<Expense> list = new ArrayList<>();
         Cursor c = db.rawQuery(sql,selectionArgs);
         while (c.moveToNext()){
-            ExpenseDTO obj = new ExpenseDTO();
+            Expense obj = new Expense();
             obj.setId(Integer.parseInt(c.getString(c.getColumnIndex("Id"))));
             obj.setName(c.getString(c.getColumnIndex("Name")));
             obj.setMoney(Integer.parseInt(c.getString(c.getColumnIndex("Money"))));

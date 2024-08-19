@@ -1,15 +1,15 @@
-package com.nhom3.sqliteapplication.dto;
+package com.nhom3.sqliteapplication.model;
 
-public class RecruitDTO {
+public class Recruit {
         private int recruitid;
         private int id;
         private String title;
         private String content;
 
-        public RecruitDTO(){
+        public Recruit(){
 
         }
-        public RecruitDTO(int recruitid,int id,String title,String content){
+        public Recruit(int recruitid, int id, String title, String content){
             this.recruitid=recruitid;
             this.id=id;
             this.title=title;
